@@ -9,7 +9,7 @@
 
   <body>
     <div class="page-container">
-      <header class="page-header" data-test="header">
+      <header class="page-header">
         <nav class="navigation">
 
           <a class="navigation-logo" href="#">
@@ -45,19 +45,19 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a class="button nav-button" href="modal.html">Хочу сюда!</a>
+              <a class="button nav-button" href="#">Хочу сюда!</a>
             </li>
           </ul>
         </nav>
       </header>
-      <main class="main-page" data-test="main">
-        <section class="hero" data-test="hero">
+      <main class="main-page">
+        <section class="hero">
           <h1 class="visually-hidden">Сайт города Седона</h1>
           <img class="hero-image" src="./images/welcome.svg"
             alt="Welcome to the gorgeous Sedona, because the grand canyon sucks!" width="458" height="352">
         </section>
 
-        <section class="advantages" data-test="advantages">
+        <section class="advantages">
           <h2 class="visually-hidden">Преимущества города Седона</h2>
           <div class="advantages-text-wrapper">
             <p class="advantages-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
@@ -97,10 +97,7 @@
               <img src="./images/advantages-photo-2.jpg" width="800" height="385" alt="Каньон в Седоне">
             </li>
           </ul>
-        </section>
-
-        <section class="services" data-test="service">
-          <div class="advantages-services-text-wrapper" data-test="service">
+          <div class="advantages-services-text-wrapper">
             <p class="advantages-title">Приезжайте в Седону отдохнуть в комфорте и уюте!</p>
             <p class="advantages-text">Опытный персонал и качественное обслуживание!</p>
           </div>
@@ -121,8 +118,7 @@
           </ul>
         </section>
 
-
-        <section class="hotel-search" data-test="search">
+        <section class="hotel-search">
           <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
           <span class="hotel-search-title">Заинтересовались?</span>
           <p class="hotel-search-description">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения
@@ -130,7 +126,7 @@
           <a class="button hotel-search-button" href="catalog.html">ПОИСК ГОСТИНИЦЫ В СЕДОНЕ</a>
         </section>
 
-        <section class="subscription subscription-theme-custom" data-test="subscribe">
+        <section class="subscription subscription-theme-custom">
           <h2 class="subscription-title">Подпишитесь на рассылку</h2>
           <p class="subscription-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -211,6 +207,72 @@
           </svg>
         </a>
       </footer>
+    </div>
+
+    <div class="modal-container" data-test="modal">
+      <div class="modal modal-search">
+        <a class="modal-close-button" href="index.html">
+          <span class="visually-hidden">Закрыть</span>
+        </a>
+        <section class="modal-content">
+          <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+          <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="modal-form">
+              <p class="field-group search-form-date">
+                <label class="form-label" for="from">Дата Заезда:</label>
+                <input class="field field-date" type="text" id="from" name="arrival-date" value="27 апреля 2020"
+                  placeholder="Укажите дату">
+              </p>
+              <span class="info info-error">Мы не можем отправить вас в прошлое.</span>
+              <p class="field-group search-form-date">
+                <label class="form-label" for="to">Дата Выезда:</label>
+                <input class="field field-date" type="text" id="to" name="departure-date" value="1 сентября 2023"
+                  placeholder="Укажите дату">
+              </p>
+              <span class="info">На эти даты есть свободные номера. Пока есть.</span>
+              <div class="guests">
+                <div class="people-wrapper">
+                  <label class="form-label people" for="adult">Взрослые:</label>
+                  <div class="button-quantity-wrapper less">
+                    <button class="button-quantity-minus" type="button">
+                      <span class="visually-hidden">Уменьшить количество взрослых</span>
+                    </button>
+                  </div>
+                  <input class="field field-number" id="adult" type="number" name="guests" value="2" max="99">
+                  <div class="button-quantity-wrapper more">
+                    <button class="button-quantity-plus" type="button">
+                      <span class="visually-hidden">Увеличить количество взрослых</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="people-wrapper">
+                  <span class="form-label form-label-kids">
+                    <label class="form-label form-label-kids" for="children">Дети:</label>
+                    <span class="tooltip">
+                      <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-children"></button>
+                      <span class="tooltip-text" role="tooltip" id="tooltip-label-children">Укажите количество детей,
+                        которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются
+                        бесплатно.</span>
+                    </span>
+                  </span>
+                  <div class="button-quantity-wrapper less">
+                    <button class="button-quantity-minus" type="button">
+                      <span class="visually-hidden">Уменьшить количество детей</span>
+                    </button>
+                  </div>
+                  <input class="field field-number" id="children" type="number" name="guests" value="2" max="99">
+                  <div class="button-quantity-wrapper more">
+                    <button class="button-quantity-plus" type="button">
+                      <span class="visually-hidden">Увеличить количество детей</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="modal-button" type="submit">Найти</button>
+          </form>
+        </section>
+      </div>
     </div>
 
   </body>
